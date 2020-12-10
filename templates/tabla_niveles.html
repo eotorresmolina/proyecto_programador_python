@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 style="color:rgba(178, 34, 34)">
+            Datos Mostrados en Formato Tabla
+        </h1>
+    </head>
+    <body style="background-color:rgba(224, 255, 255)">
+        <table class="egt" border="1">
+            <caption>
+                <b>Total de Registros Ingresados.</b>
+            </caption>
+            <thead cellpadding="1.0" cellspacing="1.0">
+                <tr>
+                    <th><b>id</b></th>
+                    <th><b>Edad</b></th>
+                    <th><b>Valor [mg/dl]</b></th>
+                    <th><b>Fecha y Hora</b></th>
+                </tr>
+                {% for c1, c2, c3, c4 in row %}
+                    <tr>
+                        <td>{{c1}}</td>
+                        <td>{{c2}}</td>
+                        <td>{{c3}}</td>
+                        <td>{{c4}}</td>
+                    </tr>
+                {% endfor %}
+            </thead cellpadding="0" cellspacing="0">
+        </table>
+    </body>
+</html>

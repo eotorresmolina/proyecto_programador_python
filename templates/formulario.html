@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color:rgba(224, 255, 255)">
+        <head>
+            <h1 style="color:rgba(178, 34, 34)">Registro de Datos:</h1>
+            <h2 style="color:rgba(178, 34, 34)">Por favor Complete los Datos del registro 
+                y Luego Haga Click en "Enviar Datos".
+            </h2>
+        </head>
+        <p>
+            <form action="/formulario" method="post" target="_self">
+                <p><b>Nombre Completo:</b> <input type="text" name="name" 
+                    placeholder="Nombre y Apellido" required></p>
+                <p><b>DNI:</b> <input type="text" name="dni" required></p>
+                <p><b>Edad:</b> <input type="number" name="age"></p>
+                <p><b>Nivel de Azúcar en Ayuna:</b> <input type="number" name="sugarlevel" required></p>
+                <input type="submit" value="Enviar Datos">
+            </form>
+        </p>
+    </body>
+</html>

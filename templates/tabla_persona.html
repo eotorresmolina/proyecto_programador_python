@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 style="color:rgba(178, 34, 34)">
+            Bienvenido/a:
+        </h1>
+        <p>
+            <h2 style="color:rgba(178, 34, 34)">
+                {{name}}
+            </h2>
+        </p>
+    </head>
+    <body style="background-color:rgba(224, 255, 255)">
+        <table class="egt" border="1">
+            <caption>
+                <b>Total de Registros Ingresados.</b>
+            </caption>
+            <thead cellpadding="1.0" cellspacing="1.0">
+                <tr>
+                    <th><h3><b>Nivel de Glucosa en Ayuna [mg/dl]</b></h3></th>
+                    <th><b>Fecha y Hora</b></th>
+                </tr>
+                {% for c1, c2 in row %}
+                    <tr>
+                        <td>{{c1}}</td>
+                        <td>{{c2}}</td>
+                    </tr>
+                {% endfor %}
+            </thead cellpadding="0" cellspacing="0">
+        </table>
+        <p>
+            <h3>El Promedio de Azúcar en Sangre hasta el Momento es: <b>{{avg}} [mg/dl]</b></h3>
+            <h3>La Cantidad de Mediciones Registradas es: <b>{{count}}</b></h3>
+        </p>
+    </body>
+</html>
