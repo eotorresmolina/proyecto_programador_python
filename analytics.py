@@ -92,7 +92,7 @@ def filter_age(personas):
     
     d = {}
 
-    # Recorro la lista e inserto en una nueva lista
+    # Recorro la lista personas e inserto en una nueva lista
     # aquellas edades cuyos ids no estén repetidos.
     for persona in personas:
         id = persona[0]

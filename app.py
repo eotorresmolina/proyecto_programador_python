@@ -67,18 +67,29 @@ def index():
 @app.route(endpoint['reset'])
 def reset():
     try:
+
+        # Pregunto si el usuario todavía no está logueado.
         if (session.get('username') is None or session.get('pswrd') is None):
             return redirect(url_for('login'))
 
+        # Entra únicamente si el usuario se logueó como administrador
         if ((session.get('username') == 'user123456') and (session.get('pswrd') == 'jilguero123')):
             
-            # Borro y/o Re-creo la DB
+            # Borro y/o Re-genero la DB
             diabetes.create_schema()
             
-            return '<h1><b>ATENCIÓN: Base de Datos (DB) Borrada y/o Regenerada Correctamente.!</b></h1>'
+            result = '<h1> Bienvenido/a: Usted está Logueado como Administrador!</h1>'
+            result += '<h1>Usted está Logueado como Administrador!</h1>'
+            result += '<h1><b>ATENCIÓN:</b> Base de Datos (DB) Borrada y/o Regenerada Correctamente.!</h1>'
+            result += '<h3>No se olvide de Desloguearse accediendo al endpoint: "/logout"'
+            
+            return result
 
         else:
+            
+            # Elimino la sesión ya que el usuario no es el administrador.
             session.clear()
+
             return Response("<h1>Error al Intentar Loguearse</h1>", status=401, mimetype='text') 
 
     except:
@@ -109,8 +120,19 @@ def login():
     except:
             return jsonify({'trace': traceback.format_exc()})
 
-            
 
+# Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/logout           
+@app.route(endpoint['logout'])
+def logout():
+    try:
+        # Cierro la Sesión Iniciada.
+        # Sucede únicamente si el administrador fue logueado.
+        session.clear()
+        
+        return redirect(url_for('.index'))
+
+    except:
+        return jsonify({'trace': traceback.format_exc()})
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/formulario
