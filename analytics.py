@@ -20,7 +20,7 @@ import numpy as np
 import io
 import matplotlib
 from matplotlib import pyplot as plt
-matplotlib.use('Agg')
+matplotlib.use('Agg')   # For multi thread, non-interactive backend (avoid run in main loop
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import diabetes
 

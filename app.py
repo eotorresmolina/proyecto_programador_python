@@ -18,7 +18,7 @@ __version__ = "1.1"
 # Importo librerías nativas, propias y de 3ros.
 import os
 import traceback
-from flask import Flask, Response, render_template, request, jsonify
+from flask import Flask, Response, render_template, request, jsonify, session, url_for, redirect
 from datetime import datetime
 from matplotlib import pyplot as plt
 
@@ -39,8 +39,19 @@ server = config('server', filename=config_path_name)
 
 # Desarrollo de la API - WebApp:
 
+# logging.basicConfig(filename='myapp.log', 
+#                     format='%(asctime)s - %(levelname)s - %(message)s', 
+#                     level=logging.INFO)
+
+# logger = logging.getLogger('app')
+
 # Creo el Server:
 app = Flask(__name__)
+
+
+# Creo una clave secreta para encriptar los datos:
+app.secret_key = 'flask_session_key_secret'
+
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000
 @app.route(endpoint['index'])
@@ -50,6 +61,56 @@ def index():
 
     except:
         return jsonify({'trace': traceback.format_exc()})
+
+
+# Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/reset
+@app.route(endpoint['reset'])
+def reset():
+    try:
+        if (session.get('username') is None or session.get('pswrd') is None):
+            return redirect(url_for('login'))
+
+        if ((session.get('username') == 'user123456') and (session.get('pswrd') == 'jilguero123')):
+            
+            # Borro y/o Re-creo la DB
+            diabetes.create_schema()
+            
+            return '<h1><b>ATENCIÓN: Base de Datos (DB) Borrada y/o Regenerada Correctamente.!</b></h1>'
+
+        else:
+            session.clear()
+            return Response("<h1>Error al Intentar Loguearse</h1>", status=401, mimetype='text') 
+
+    except:
+        return jsonify({'trace': traceback.format_exc()})
+
+
+# Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/login
+@app.route(endpoint['login'], methods=['GET', 'POST'])
+def login():
+    try:
+        # Entro, en este caso, cuando soy redirigido por '/reset'
+        if request.method == 'GET':
+            return render_template(templates['login'])
+
+        elif request.method == 'POST':
+            username = str(request.form.get('username'))
+            pswrd = str(request.form.get('password'))
+
+            # Si no se ingresaron datos
+            if (username is None or pswrd is None):
+                return Response('Usted no se ha Logueado', status=400, mimetype='text')
+
+            session['username'] = username
+            session['pswrd'] = pswrd
+
+            return redirect(url_for('reset'))
+
+    except:
+            return jsonify({'trace': traceback.format_exc()})
+
+            
+
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/formulario
@@ -79,7 +140,7 @@ def registro():
 
                 # Retorno un Código de Estado 400
                 return Response(status=400)
-
+                
             # Inserto los valores a la DB dentro de la tabla "registro"
             diabetes.insert_registro(int(dni))
 
@@ -233,9 +294,6 @@ def info():
 
 
 if __name__ == "__main__":
-
-    # Creo la DB:
-    diabetes.create_schema()
     
     # Lanzo el Server:
     app.run(
