@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
+    <title>SIRCODI</title>
     <header>
         <h1 style="color:rgba(178, 34, 34)">
-            Hola! Bienvenido/a a esta Aplicación Web / API REST
+            Aplicación Web - WebApp
         </h1>
         <h1 style="color:rgba(178, 34, 34)"><b>SIRCODI</b> - Sistema de Registro 
             y Control para Personas con Diabetes</h1>
     </header>
     <body style="background-color:rgba(224, 255, 255)">
         <p>
-            <h2>Endpoints Disponibles:</h2>
-            <h3><b>[GET]</b> /reset --> Crea y Carga/Regenera la Base de Datos [DB] una vez Logueado
-                como Administrador.</h3>
-            <h3><b>[GET]</b> /formulario --> Completar el Registro de la Persona
-                a través de un formulario HTML.</h3>
-            <h3><b>[POST]</b> /formulario --> Enviar los Datos del formulario al Servidor.</h3>
-            <h3><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
-            Útil para Desarrolladores.</h3>
-            <h3><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
-                en formato Tabla HTML.</h3>
-            <h3><b>[GET]</b> /niveles/{dni}/chart --> Muestra un gráfico del Histórico de
-                los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3>
-            <h3><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
-                Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3>
-            <h3><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
-                la cantidad de personas con Diabetes según el grupo etario.</h3>
-            <h3><b>[GET]</b> /info --> Descripción de como utilizar esta WebApp. 
-                Información acerca de la misma.</h3>
+            <i><h2>Endpoints Disponibles:</h2></i>
+            <ul>
+                <li><h3><b>[GET]</b> /reset --> Crea y Carga/Regenera la Base de Datos [DB] una vez Logueado
+                como Administrador.</h3></li>
+                <li><h3><b>[GET]</b> /formulario --> Completar el Registro de la Persona
+                a través de un formulario HTML.</h3></li>
+                <li><h3><b>[POST]</b> /formulario --> Enviar los Datos del formulario al Servidor.</h3></li>
+                <li><h3><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
+                Útil para Desarrolladores.</h3></li>
+                <li><h3><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
+                en formato Tabla HTML.</h3></li>
+                <li><h3><b>[GET]</b> /niveles/{dni}/chart --> Muestra un gráfico del Histórico de
+                los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
+                <li><h3><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
+                Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
+                <li><h3><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
+                la cantidad de personas con Diabetes según el grupo etario.</h3></li>
+                <li><h3><b>[GET]</b> /info --> Descripción detallada de como utilizar esta WebApp. 
+                Información acerca de la misma.</h3></li>
+            </ul>
         </p>
     </body>
 </html>

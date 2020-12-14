@@ -18,6 +18,7 @@ __version__ = "1.1"
 # Importo librerías nativas, propias y de 3ros.
 import os
 import traceback
+import logging
 from flask import Flask, Response, render_template, request, jsonify, session, url_for, redirect
 from datetime import datetime
 from matplotlib import pyplot as plt
@@ -25,7 +26,6 @@ from matplotlib import pyplot as plt
 from config import config
 import diabetes
 import analytics
-import logging
 
 
 # Creo los path de los archivos para utilizar en este programa:
@@ -77,11 +77,13 @@ def reset():
             
             # Borro y/o Re-genero la DB
             diabetes.create_schema()
+
+            url = url_for('logout')
             
             result = '<h1> Bienvenido/a: Usted está Logueado como Administrador!</h1>'
-            result += '<h1>Usted está Logueado como Administrador!</h1>'
             result += '<h1><b>ATENCIÓN:</b> Base de Datos (DB) Borrada y/o Regenerada Correctamente.!</h1>'
-            result += '<h3>No se olvide de Desloguearse accediendo al endpoint: "/logout"'
+            result += '<h3>No se olvide de Desloguearse accediendo a: '
+            result += '<a href=' + str(url) + '>logout</a></h3>'
             
             return result
 
@@ -309,7 +311,7 @@ def comparativa():
 @app.route(endpoint['info'])
 def info():
     try:
-        pass
+        return render_template(templates['info'])
 
     except:
         return jsonify({'trace': traceback.format_exc()})
