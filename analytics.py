@@ -22,6 +22,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 matplotlib.use('Agg')   # For multi thread, non-interactive backend (avoid run in main loop
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import seaborn as sns
 import diabetes
 
 
@@ -78,29 +79,29 @@ def plot_to_canvas(fig):
     return output
 
 
-def filter_age(personas):
+def filtered_atrr(personas):
     """
     Función encargada de obtener los
-    id junto con las edades y filtrar
+    id junto con el atributo filtrando
     aquellos id repetidos.
-    Retorna una nueva lista con las
-    edades filtradas.
+    Retorna una nueva lista con los
+    atributos filtrados.
     """
 
-    # Creo una Lista Vacía donde se van a almacenar las edades.
-    ages =[]
+    # Creo una Lista Vacía donde se van a almacenar los atributos.
+    attrs =[]
     
     d = {}
 
     # Recorro la lista personas e inserto en una nueva lista
-    # aquellas edades cuyos ids no estén repetidos.
+    # aquellos atributos cuyos ids no estén repetidos.
     for persona in personas:
         id = persona[0]
         if d.get(str(id)) is None:
             d[str(id)] = persona[1]
-            ages.append(d[str(id)])
+            attrs.append(d[str(id)])
 
-    return ages
+    return attrs
         
     
 def create_age_group(ages):
@@ -135,16 +136,45 @@ def create_age_group(ages):
     return age_group
 
 
-def bar_plot(x, y, title, color, ylabel):
-    '''
-    Función que realiza un gráfico de barras.
-    '''
-    fig, ax = plt.subplots(figsize=(16, 9))
-    ax.set_title(title, fontsize=19)
-    ax.bar(x, y, color=color)
-    ax.set_facecolor('lightyellow')
-    ax.set_ylabel(ylabel, fontsize=19)
+def create_gender_group(gender):
+    """
+    Función encargada de separar
+    el sexo biológico en 2 grupos: femenino
+    y masculino y calcular la cantidad
+    de personas que pertenecen a cada grupo.
+    Retorna un diccionario con los
+    grupos.
+    """
+    gender_group = {'masculino': 0, 'femenino': 0}
 
-    plt.grid('True')
+    for gen in gender:
+        if gen == 'm':
+            gender_group['masculino'] += 1
+
+        elif gen == 'f':
+            gender_group['femenino'] += 1
+ 
+    return gender_group
+
+
+def bar_plot(x, y, titles, ylabel):
+    '''
+    Función que realiza un gráfico de barras,
+    esta vez utilizando la biblioteca seaborn.
+    '''
+    fig, axs = plt.subplots(2,1, figsize=(16, 9))
+
+    
+    axs[0].set_title(titles[0], fontsize=16)
+    sns.barplot(x=x[0], y=y[0], palette='muted', ax=axs[0])
+    axs[0].set_facecolor('lightyellow')
+    axs[0].set_ylabel(ylabel, fontsize=19)
+    axs[0].grid('True')
+
+    axs[1].set_title(titles[1], fontsize=16)
+    sns.barplot(x=x[1], y=y[1], palette='dark', ax=axs[1])
+    axs[1].set_facecolor('lightyellow')
+    axs[1].set_ylabel(ylabel, fontsize=19)
+    axs[1].grid('True')
 
     return fig

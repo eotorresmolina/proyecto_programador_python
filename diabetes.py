@@ -101,8 +101,8 @@ def insert_persona(item: tuple):
     try:
         c.execute(
             """
-            INSERT INTO persona (name, age, value, datetime, fk_registro_id)
-            SELECT ?, ?, ?, ?, r.id
+            INSERT INTO persona (name, age, gender, value, datetime, fk_registro_id)
+            SELECT ?, ?, ?, ?, ?, r.id
             FROM registro AS r
             WHERE r.dni = ?; """, item)
 
@@ -207,18 +207,18 @@ def fill_avg_count_value(dni):
     return query_result
 
 
-def extract_ages():
+def extract_ages_gender():
     """
     Función que realiza una consulta
     a la DB y extrae el id junto con la edad
-    de la persona.
+    de la persona y el sexo biológico.
     """
     conn = sqlite3.connect(db['database'])
     conn.execute("""PRAGMA foreign_keys = 1;""")
     c = conn.cursor()
 
     c.execute(
-        """ SELECT p.fk_registro_id, p.age
+        """ SELECT p.fk_registro_id, p.age, p.gender
             FROM persona AS p
             INNER JOIN registro AS r
             ON r.id = p.fk_registro_id

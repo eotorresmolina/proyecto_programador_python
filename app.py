@@ -48,8 +48,7 @@ server = config('server', filename=config_path_name)
 # Creo el Server:
 app = Flask(__name__)
 
-
-# Creo una clave secreta para encriptar los datos:
+# Creo una clave secreta para encriptar los datos --> usado para las sesiones en Flask:
 app.secret_key = 'flask_session_key_secret'
 
 
@@ -156,10 +155,11 @@ def registro():
             name = str(request.form.get('name'))
             dni = str(request.form.get('dni'))
             age = str(request.form.get('age'))
+            gender = str(request.form.get('gender'))
             sugarlevel = str(request.form.get('sugarlevel'))
 
             if (name is None or dni is None or dni.isdigit() is False
-                or age.isdigit() is False or sugarlevel is None
+                or age.isdigit() is False or gender is None or sugarlevel is None
                 or sugarlevel.isdigit() is False):
 
                 # Retorno un Código de Estado 400
@@ -172,7 +172,7 @@ def registro():
             date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             # Inserto los valores a la DB dentro de la tabla "persona"
-            item = (name, int(age), int(sugarlevel), date, int(dni))
+            item = (name, int(age), gender, int(sugarlevel), date, int(dni))
             diabetes.insert_persona(item)
 
             # Retorno una página HTML
@@ -271,29 +271,55 @@ def niveles_dni_tabla(dni):
 @app.route(endpoint['comparativa'])
 def comparativa():
     try:
-        # Extraigo todas las edades junto con los ids
-        ids_ages = diabetes.extract_ages()
+        
+        # Extraigo todas las edad y el sexo biológico junto con el id de cada registro
+        # realizado por cada persona.
+        person_attr = diabetes.extract_ages_gender()
+
+        #Filtro los ids y las edades
+        ids_ages = [[elem[0], elem[1]] for elem in person_attr]
+
+        # Filtro los ids y los géneros.
+        ids_genders = [[elem[0], elem[2]] for elem in person_attr]
 
         # Filtro los ids repetidos y me quedo sólo con las edades
-        ages = analytics.filter_age(ids_ages)
+        ages = analytics.filtered_atrr(ids_ages)
+
+        # Filtro los ids repetidos y me quedo sólo con los géneros
+        genders = analytics.filtered_atrr(ids_genders)
 
         # Obtengo la cantidad de personas con diabetes por grupo etario
         # en formato diccionario
         age_group = analytics.create_age_group(ages)
 
-        # Obtengo la cantidad de los grupos utilizando compresión de listas
-        values = age_group.values()
-        y = [value for value in values]
+        # Obtengo la cantidad de personas con diabetes por género ==> sexo biólogico
+        # en formato diccionario
+        gen_group = analytics.create_gender_group(genders)
 
-        x = ['Bebés: [0:5]', 'Infantes: [6:12]', 'Adolescentes: [13:19]',
+        # Obtengo la cantidad de los grupos con el método dicc.values() 
+        # Recorro la lista de tuplas y genero nueva lista utilizando compresión de listas 
+        age_values = age_group.values()
+        y_age = [value for value in age_values]
+
+        gen_values = gen_group.values()
+        y_gen = [value for value in gen_values]
+
+        x_age_group = ['Bebés: [0:5]', 'Infantes: [6:12]', 'Adolescentes: [13:19]',
                 'Jóvenes Adultos: [20:35]', 'Adultos: [36:60]', 
                 'Adultos Mayores: +60']
 
-        title = 'Comparativa de la Cantidad de Personas con Diabetes Registradas por Grupo Etario'
+        x_gen_group = ['Hombres', 'Mujeres']
+
+        x = [x_age_group, x_gen_group]
+        y = [y_age, y_gen]
+
+        titles = ['Comparativa de la Cantidad de Personas con Diabetes Registradas por Grupo Etario',
+                    'Comparativa de la Cantidad de Personas con Diabetes Registradas por Sexo Biológico']
+        
         ylabel = 'Cant. de Personas'
 
-        # Realizo el gráfico de barras
-        fig = analytics.bar_plot(x, y, title, color='darkblue', ylabel=ylabel)
+        # Realizo el gráfico de barras para el axis 1
+        fig = analytics.bar_plot(x, y, titles, ylabel=ylabel)
         
         # Convierto el gráfico de Barras en una imagen para enviar por HTTP
         output = analytics.plot_to_canvas(fig)
