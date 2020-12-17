@@ -3,15 +3,29 @@
  
  
 # **Tipo y Número de Proyecto:**
- ### **1er Proyecto de la Carrera.**
- ### **Lenguaje Utilizado:** *Python*
- ### **Curso:** *Python Inicial* 
+ ### **2do Proyecto de la Carrera.**
+ ### **Lenguaje Backend Utilizado:** *Python*
+ ### **Curso:** *Programador Python* 
  ### **Carrera:** *Desarrollador Python*
  ### **Institución:** *Inove Coding School*
  
+ # **Librería y Módulos Utilizados:**
+ ### **Flask** ---> microframework
+ ### **sqlite3** ---> DB - Data Base
+ ### **Matplotlib**
+ ### **Seaborn**
+ ### **Numpy**
+ ### **traceback**
+ ### **io**
+ ### **logging**
+ ### **os**
+ ### **datetime**
+ ### **configparser**
  
-# **Datos del Autor del Proyecto:**
- ### ***Nombre:*** Torres Molina, Emmanuel Oscar.
+ 
+ 
+# **Contacto**
+ ### ***Autor:*** Torres Molina, Emmanuel Oscar.
  ### ***email:*** emmaotm@gmail.com
  ### ***Para Ver mis Otros Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
 
@@ -33,9 +47,9 @@
 
 # **Módulo y/o Archivos para que el Programa Funcione Correctamente:**
  #### *Se debe Bajar los siguientes módulos:*
- 1. proyecto_covid19.py (Programa Principal)
- 2. myfunctions.py (Módulo/Librería que Contiene varias funciones utilizadas)
- 3. funciones_covid19.py (Módulo/Librería que Contiene varias funciones utilizadas)
+ 1. app.py (Programa Principal)
+ 2. diabetes.py (Módulo/Librería que Contiene varias funciones utilizadas)
+ 3. analitycs.py (Módulo/Librería que Contiene varias funciones utilizadas)
  4. registro_covid19.py (Archivo .csv que Contiene todos los Registros de las Personas Contagiadas)
 
 
@@ -46,5 +60,5 @@
 
 # **Consulta y/o Problemas:**
  #### *Ante Cualquier mal funcionamiento del Programa y/o consultas acerca del uso del mismo pueden mandarme un mensaje al mail que más arriba se detalla.*
- #### *Muchas Gracias.*
+ #### *Muchas Gracias por haber llegado hasta acá.*
  #### *Emmanuel.*
