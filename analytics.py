@@ -173,7 +173,7 @@ def bar_plot(x, y, titles, ylabel):
 
     axs[1].set_title(titles[1], fontsize=16)
     sns.barplot(x=x[1], y=y[1], palette='dark', ax=axs[1])
-    axs[1].set_facecolor('lightyellow')
+    axs[1].set_facecolor('lightgreen')
     axs[1].set_ylabel(ylabel, fontsize=19)
     axs[1].grid('True')
 

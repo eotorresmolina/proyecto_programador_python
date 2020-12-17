@@ -37,6 +37,28 @@ templates = config('templates', filename=config_path_name)
 server = config('server', filename=config_path_name)
 
 
+# Funciones utilizadas en app.py:
+def get_args():
+    '''
+    Función que toma los argumentos
+    dinámicos para realizar un paginación.
+    '''
+    limit = str(request.args.get('limit'))
+    offset = str(request.args.get('offset'))
+
+    if (limit is not None and limit.isdigit()):
+        limit = int(limit)
+    else:
+        limit = 0
+
+    if (offset is not None and offset.isdigit()):
+        offset = int(offset)
+    else:
+        offset = 0
+
+    return limit, offset
+
+
 # Desarrollo de la API - WebApp:
 
 # logging.basicConfig(filename='myapp.log', 
@@ -186,7 +208,10 @@ def registro():
 @app.route(endpoint['niveles_api'])
 def niveles_api():
     try:
-        data_json = diabetes.report(dict_format=True)
+        # Obtengo el limit y el offset para la "paginación"
+        limit, offset = get_args()
+
+        data_json = diabetes.report(limit, offset, dict_format=True)
         return jsonify(data_json)
 
     except:
@@ -197,8 +222,11 @@ def niveles_api():
 @app.route(endpoint['niveles_tabla'])
 def niveles_tabla():
     try:
+        # Obtengo el limit y el offset para la "paginación"
+        limit, offset = get_args()
+
         # Obtengo los Datos en formato tupla
-        rows = diabetes.report(dict_format=False)
+        rows = diabetes.report(limit, offset, dict_format=False)
 
         c1 = [value[0] for value in rows]   # Obtengo el id
         c2 = [value[1] for value in rows]   # Obtengo la edad
