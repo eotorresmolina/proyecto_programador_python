@@ -41,7 +41,7 @@ server = config('server', filename=config_path_name)
 def get_args():
     '''
     Función que toma los argumentos
-    dinámicos para realizar un paginación.
+    dinámicos para realizar un "paginación".
     '''
     limit = str(request.args.get('limit'))
     offset = str(request.args.get('offset'))
