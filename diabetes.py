@@ -125,7 +125,7 @@ def dict_factory(cursor, row):
     return d
 
 
-def report(limit=0, offset=0, dict_format=False):
+def report(nro_id=0, limit=0, offset=0, dict_format=False):
     """
     Función que Busca en la DB
     y extrae todos los datos
@@ -142,9 +142,16 @@ def report(limit=0, offset=0, dict_format=False):
 
     c = conn.cursor()
 
-    query = """ SELECT fk_registro_id AS id, age, value, datetime
-                FROM persona
-                ORDER BY fk_registro_id"""
+    query = """ age, value, datetime
+                FROM persona """
+                
+    if nro_id > 0:
+        query = 'SELECT' + query 
+        query += """ WHERE fk_registro_id = {}""".format(nro_id)
+    else:
+        query = 'SELECT fk_registro_id AS id,' + query          
+        
+    query += """ ORDER BY fk_registro_id"""
 
     if limit > 0:
         query += """ LIMIT {}""".format(limit)

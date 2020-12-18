@@ -43,8 +43,14 @@ def get_args():
     Función que toma los argumentos
     dinámicos para realizar un "paginación".
     '''
+    nro_id = str(request.args.get('id'))
     limit = str(request.args.get('limit'))
     offset = str(request.args.get('offset'))
+
+    if (nro_id is not None and nro_id.isdigit()):
+        nro_id = int(nro_id)
+    else:
+        nro_id = 0
 
     if (limit is not None and limit.isdigit()):
         limit = int(limit)
@@ -56,7 +62,7 @@ def get_args():
     else:
         offset = 0
 
-    return limit, offset
+    return nro_id, limit, offset
 
 
 # Desarrollo de la API - WebApp:
@@ -210,10 +216,11 @@ def registro():
 @app.route(endpoint['niveles_api'])
 def niveles_api():
     try:
+        # Obtengo el id para mostrar solo los registros correspondientes a ese id
         # Obtengo el limit y el offset para la "paginación"
-        limit, offset = get_args()
+        nro_id, limit, offset = get_args()
 
-        data_json = diabetes.report(limit, offset, dict_format=True)
+        data_json = diabetes.report(nro_id, limit, offset, dict_format=True)
         return jsonify(data_json)
 
     except:
@@ -224,11 +231,12 @@ def niveles_api():
 @app.route(endpoint['niveles_tabla'])
 def niveles_tabla():
     try:
+        # Obtengo el id para mostrar solo los registros correspondientes a ese id
         # Obtengo el limit y el offset para la "paginación"
-        limit, offset = get_args()
+        nro_id, limit, offset = get_args()
 
         # Obtengo los Datos en formato tupla
-        rows = diabetes.report(limit, offset, dict_format=False)
+        rows = diabetes.report(nro_id, limit, offset, dict_format=False)
 
         c1 = [value[0] for value in rows]   # Obtengo el id
         c2 = [value[1] for value in rows]   # Obtengo la edad
@@ -374,6 +382,11 @@ def info():
 
 
 if __name__ == "__main__":
+
+    print('\n\nWebApp "SICORDI" Corriendo...\n')
+
+    print('Para Acceder a la WebApp Copiar el Siguiente Enlace: http://{}:{}/\n'
+            .format(server['host'], server['port']))
     
     # Lanzo el Server:
     app.run(
