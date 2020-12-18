@@ -90,11 +90,11 @@ def reset():
     try:
 
         # Pregunto si el usuario todavía no está logueado.
-        if (session.get('username') is None or session.get('pswrd') is None):
+        if (session.get('username') is None or session.get('numerical_code') is None):
             return redirect(url_for('login'))
 
         # Entra únicamente si el usuario se logueó como administrador
-        if ((session.get('username') == 'user123456') and (session.get('pswrd') == 'jilguero123')):
+        if ((session.get('username') == 'todopython') and (session.get('numerical_code') == '280930061993')):
             
             # Borro y/o Re-genero la DB
             diabetes.create_schema()
@@ -129,15 +129,16 @@ def login():
 
         elif request.method == 'POST':
             username = str(request.form.get('username'))
-            pswrd = str(request.form.get('password'))
+            numerical_code = str(request.form.get('numerical_code'))
 
-            # Si no se ingresaron datos
-            if (username is None or pswrd is None):
-                return Response('Usted no se ha Logueado', status=400, mimetype='text')
+            # Si no se ingresaron datos o si el código no es numérico retorno un error ---> status 400
+            if (username is None or numerical_code is None or numerical_code.isdigit() is False):
+                return Response('Error!!... Usted no se ha podido Loguear', status=400, mimetype='text')
 
             session['username'] = username
-            session['pswrd'] = pswrd
+            session['numerical_code'] = numerical_code
 
+            # Redirecciono hacia el endpoint "reset"
             return redirect(url_for('reset'))
 
     except:
@@ -152,6 +153,7 @@ def logout():
         # Sucede únicamente si el administrador fue logueado.
         session.clear()
         
+        # Redirecciono hacia el endpoint principal "/"
         return redirect(url_for('.index'))
 
     except:
@@ -239,7 +241,7 @@ def niveles_tabla():
         return jsonify({'trace': traceback.format_exc()})
 
 
-# Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/{dni}/chart
+# Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/{dni}/grafico
 # En este caso usamos una query string con "paramétros estáticos"
 @app.route(endpoint['niveles_dni_chart'])
 def niveles_dni_chart(dni):
