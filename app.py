@@ -385,7 +385,7 @@ if __name__ == "__main__":
 
     print('\n\nWebApp "SICORDI" Corriendo...\n')
 
-    print('Para Acceder a la WebApp Copiar el Siguiente Enlace: http://{}:{}/\n'
+    print('Para Acceder a la WebApp Ingresar al Siguiente Enlace: http://{}:{}/\n'
             .format(server['host'], server['port']))
     
     # Lanzo el Server:
