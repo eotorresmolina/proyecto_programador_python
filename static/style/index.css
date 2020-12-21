@@ -1,8 +1,38 @@
-body {
+.body-form {
     background-image: url("..//media/diabetes.jpg");
     background-color: rgba(224, 255, 255);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+
+.div2-form {
+    font-size: 13px;
+}
+
+.div2-form__h1 {
+    color: rgba(178, 34, 34);
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 5em;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 100;
+    border-radius: 13px;
+    border: 1px solid blue;
+    box-shadow: 2px 4px 10px 0 #000;
+    text-shadow: 4px 4px 9px #fff, 4px 4px 9px #fff
+}
+
+.div3-form__h2 {
+    color: rgba(178, 34, 34);
+    display: block;
+    box-sizing: border-box;
+    font-size: 3em;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 100;
+    text-shadow: 3px 3px 8px #fff, 2px 2px 7px #fff
 }

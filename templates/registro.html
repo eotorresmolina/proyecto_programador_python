@@ -3,15 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
     </head>
     <body style="background-color:rgba(224, 255, 255)">
-        <h1 style="color:rgba(178, 34, 34)">
-            Datos Enviados Correctamente.
-        </h1>
-        <p>
-            <form action="/" method="get" target="_self">
-                <input type="submit" value="Volver al Menú Principal">
-            </form>
-        </p>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/reset">Crear y/o Regenerar DB</a></li>
+                    <li><a href="/login">Loguearse como Administrador</a></li>
+                    <li><a href="/info">Información y Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <section>
+                <h1 style="color:rgba(178, 34, 34)">
+                    Datos Enviados Correctamente.
+                </h1>
+                <p>
+                    <form action="/" method="get" target="_self">
+                        <input type="submit" value="Volver al Menú Principal">
+                    </form>
+                </p>
+            </section>
+        </article>
     </body>
 </html>

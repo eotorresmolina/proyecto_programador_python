@@ -4,23 +4,40 @@
         <title>Formulario de Registro</title>
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/form.css')}}">
+        <link rel="stylesheet" href="../../static/style/form.css" type="text/css">
     </head>
-    <body style="background-color:rgba(224, 255, 255)">
-        <h1 style="color:rgba(178, 34, 34)">Registro de Datos:</h1>
-        <h2 style="color:rgba(178, 34, 34)">Por favor Complete los Datos del registro 
-            y luego Haga Click en "Enviar Datos".
-        </h2>
-        <p>
-            <form action="/formulario" method="post" target="_self">
-                <p><b>Nombre Completo:</b> <input type="text" name="name" 
-                    placeholder="Nombre y Apellido" required></p>
-                <p><b>DNI:</b> <input type="text" name="dni" required></p>
-                <p><b>Edad:</b> <input type="number" name="age"></p>
-                <p><b>Sexo:</b> <input type="text" name="gender"
-                    placeholder="Completar con: 'm' o 'f'"></p>
-                <p><b>Nivel de Azúcar en Ayuna:</b> <input type="number" name="sugarlevel" required></p>
-                <input type="submit" value="Enviar Datos">
-            </form>
-        </p>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/reset">Crear y/o Regenerar DB</a></li>
+                    <li><a href="/login">Loguearse como Administrador</a></li>
+                    <li><a href="/info">Información y Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <section>
+                <h1 style="color:rgba(178, 34, 34)">Registro de Datos:</h1>
+                <h2 style="color:rgba(178, 34, 34)">Por favor Complete los Datos del registro 
+                    y luego Haga Click en "Enviar Datos".
+                </h2>
+                <p>
+                    <form action="/formulario" method="post" target="_self">
+                        <p><b>Nombre Completo:</b> <input type="text" name="name" 
+                            placeholder="Nombre y Apellido" required></p>
+                        <p><b>DNI:</b> <input type="text" name="dni" required></p>
+                        <p><b>Edad:</b> <input type="number" name="age"></p>
+                        <p><b>Sexo:</b> <input type="text" name="gender"
+                            placeholder="Completar con: 'm' o 'f'"></p>
+                        <p><b>Nivel de Azúcar en Ayuna:</b> <input type="number" name="sugarlevel" required></p>
+                        <input type="submit" value="Enviar Datos">
+                    </form>
+                </p>
+            </section>
+        </article>
     </body>
 </html>

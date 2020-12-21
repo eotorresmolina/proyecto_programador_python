@@ -4,33 +4,54 @@
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
         <title>SIRCODI</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="stylesheet" href="../../static/style/normalize.css" type="text/css">
         <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+        <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
     </head>
-    <body style="background-color:rgba(224, 255, 255)">
-        <header>
-        </header>
-        <h1 style="color:rgba(178, 34, 34)"><b>SIRCODI</b> - Sistema de Registro 
-            y Control para Personas con Diabetes</h1>
-        <u><i><h2>Endpoints Disponibles:</h2></i></u>
-        <ul>
-            <li><h3><b>[GET]</b> /reset --> Crea y Carga/Regenera la Base de Datos [DB] una vez Logueado
-            como Administrador.</h3></li>
-            <li><h3><b>[GET]</b> /formulario --> Completar el Registro de la Persona
-            a través de un formulario HTML.</h3></li>
-            <li><h3><b>[POST]</b> /formulario --> Enviar los Datos del formulario al Servidor.</h3></li>
-            <li><h3><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
-            Útil para Desarrolladores.</h3></li>
-            <li><h3><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
-            en formato Tabla HTML.</h3></li>
-            <li><h3><b>[GET]</b> /niveles/{dni}/grafico --> Muestra un gráfico del Histórico de
-            los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
-            <li><h3><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
-            Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
-            <li><h3><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
-            la cantidad de personas con Diabetes según el grupo etario y según el
-            sexo biológico.</h3></li>
-            <li><h3><b>[GET]</b> /info --> Descripción detallada de como utilizar esta WebApp. 
-            Información acerca de la misma.</h3></li>
-        </ul>
+    <body class="body-form">
+        <div>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/reset">Crear y/o Regenerar DB</a></li>
+                        <li><a href="/login">Loguearse como Administrador</a></li>
+                        <li><a href="/info">Información y Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="div2-form">
+            <h1 class="div2-form__h1">SIRCODI</h1>
+        </div>
+        <div class="div3-form">
+            <h2 class="div3-form__h2">Sistema de Registro 
+                y Control para Personas con Diabetes</h2>
+        </div>
+        <div>
+            <section>
+                <article>
+                    <u><i><h2>Endpoints Disponibles:</h2></i></u>
+                    <ul>
+                        <li><h3><b>[GET]</b> /formulario --> Completar el Registro de la Persona
+                        a través de un formulario HTML.</h3></li>
+                        <li><h3><b>[POST]</b> /formulario --> Enviar los Datos del formulario al Servidor.</h3></li>
+                        <li><h3><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
+                        Útil para Desarrolladores.</h3></li>
+                        <li><h3><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
+                        en formato Tabla HTML.</h3></li>
+                        <li><h3><b>[GET]</b> /niveles/{dni}/grafico --> Muestra un gráfico del Histórico de
+                        los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
+                        <li><h3><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
+                        Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
+                        <li><h3><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
+                        la cantidad de personas con Diabetes según el grupo etario y según el
+                        sexo biológico.</h3></li>
+                    </ul>
+                </article>
+            </section>
+        </div>
     </body>
 </html>

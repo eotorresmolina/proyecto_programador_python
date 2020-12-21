@@ -146,8 +146,13 @@ def report(nro_id=0, limit=0, offset=0, dict_format=False):
                 FROM persona """
                 
     if nro_id > 0:
-        query = 'SELECT' + query 
+        if dict_format is True:
+            query = 'SELECT' + query
+        else:
+            query = 'SELECT fk_registro_id AS id,' + query  
+
         query += """ WHERE fk_registro_id = {}""".format(nro_id)
+    
     else:
         query = 'SELECT fk_registro_id AS id,' + query          
         

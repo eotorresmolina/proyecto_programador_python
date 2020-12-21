@@ -4,34 +4,52 @@
         <title>Info</title>
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/index.css')}}">
     </head>
     <body>
         <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/reset">Crear y/o Regenerar DB</a></li>
+                    <li><a href="/login">Loguearse como Administrador</a></li>
+                    <li><a href="/info">Información y Contacto</a></li>
+                </ul>
+            </nav>
             <img src="{{url_for('static', filename='media/info.png')}}">
-            <h1 style="color:rgba(178, 34, 34)"><b>SIRCODI</b> - Sistema de Registro 
-                y Control para Personas con Diabetes</h1>
         </header>
-        <p>Antes que nada, me gustaría aclarar que dicha aplicación es una WebApp 
-            diseñada con fines meramente académicos.</p>
-        <p>En un futuro, y, luego de ser aún más desarrollado y mejorado podría ser presentado
-            para un proyecto en el cual sirva para las personas y el médico diabetólogo tener
-            un registro de las mediciones del nivel de glucosa en sangre 
-            realizadas únicamente en ayunas, excepto casos especiales.</p>
-        <p>De esta manera aumentaría el flujo de la comunicación entre ambos, y, así el médico
-            podría llevar un control de sus pacientes sin siquiera tener un contacto físico.</p>
-        <p><b>SIRCODI</b>, como bien lo aclara el título, es un sistema de control y registro
-            para aquellas personas que tienen Diabetes.</p>
-        <p>El Registro llevado se realiza una vez que la persona y/o el paciente </p>
-        
+        <div class="div2-form">
+            <h1 class="div2-form__h1">SIRCODI</h1>
+            <h2 class="div2-form__h2">Sistema de Registro 
+                y Control para Personas con Diabetes</h2>
+        </div>
+        <article>
+            <section>
+                <p>Antes que nada, me gustaría aclarar que dicha aplicación es una WebApp 
+                    diseñada con fines meramente académicos.</p>
+                <p>En un futuro, y, luego de ser aún más desarrollado y mejorado podría ser presentado
+                    para un proyecto en el cual sirva para las personas y el médico diabetólogo tener
+                    un registro de las mediciones del nivel de glucosa en sangre 
+                    realizadas únicamente en ayunas, excepto casos especiales.</p>
+                <p>De esta manera aumentaría el flujo de la comunicación entre ambos, y, así el médico
+                    podría llevar un control de sus pacientes sin siquiera tener un contacto físico.</p>
+                <p><b>SIRCODI</b>, como bien lo aclara el título, es un sistema de control y registro
+                    para aquellas personas que tienen Diabetes.</p>
+                <p>El Registro llevado se realiza una vez que la persona y/o el paciente </p>
+                
+            </section>
+        </article>
         <footer>
             <address>
                 <b>Autor:</b> Torres Molina Emmanuel O.
                 <b>Contacto:</b> emmaotm@gmail.com
-                <b>Repositorio en GitHub:</b>
-                    <a href="https://github.com/eotorresmolina/proyecto_programador_python" target=_BLANK>
-                        https://github.com/eotorresmolina/proyecto_programador_python</a>
+                <a href="https://github.com/eotorresmolina" target=_BLANK>
+                    <b>GitHub</b></a>
+                <a href="https://github.com/eotorresmolina/proyecto_programador_python" target=_BLANK>
+                    <b>Repositorio</b></a>
             </address>
         </footer>
-    
     </body>
 </html>

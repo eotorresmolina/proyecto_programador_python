@@ -55,6 +55,7 @@ def plot_xy (x, y, color, title, ylabel):
     fig, ax = plt.subplots(figsize=(16, 9))
     ax.set_title(title, fontsize=19)
     ax.plot(x, y, color=color)
+    ax.scatter(x, y, color=color, marker='o', linewidth=2.0)
     ax.set_facecolor('lightcyan')
     ax.set_ylabel(ylabel, fontsize=20)
 
