@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="../../static/style/normalize.css" type="text/css">
         <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
         <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/form.css')}}">
+        <link rel="stylesheet" href="../../static/style/form.css" type="text/css">
         <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
         <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
     </head>
@@ -25,34 +27,173 @@
                         Información y Contacto</a></li>
                 </ul>
             </nav>
-            <img src="{{url_for('static', filename='media/info.png')}}">
         </header>
         <div class="div2-form">
             <h1 class="div2-form__h1">SIRCODI</h1>
             <h2 class="div2-form__h2">Sistema de Registro 
                 y Control para Personas con Diabetes</h2>
         </div>
-        <article>
-            <section>
-                <p>Antes que nada, me gustaría aclarar que dicha aplicación es una WebApp 
-                    diseñada con fines meramente académicos.</p>
-                <p>En un futuro, y, luego de ser aún más desarrollado y mejorado podría ser presentado
-                    para un proyecto en el cual sirva para las personas y el médico diabetólogo tener
-                    un registro de las mediciones del nivel de glucosa en sangre 
-                    realizadas únicamente en ayunas, excepto casos especiales.</p>
-                <p>De esta manera aumentaría el flujo de la comunicación entre ambos, y, así el médico
-                    podría llevar un control de sus pacientes sin siquiera tener un contacto físico.</p>
-                <p><b>SIRCODI</b>, como bien lo aclara el título, es un sistema de control y registro
-                    para aquellas personas que tienen Diabetes.</p>
-                <p>El Registro llevado se realiza una vez que la persona y/o el paciente </p>
-                
-            </section>
-        </article>
-        <div class="content-footer">
+        <div class="info-container">
+            <div class="info-container__section">
+                <h2 <i class="fas fa-info"></i><b> INFORMACIÓN:</b></h2>
+                <p>
+                    Hola, bienvenid@!... <b>SICORDI</b> es una Aplicación Web o lo que
+                    hoy en día se conoce como "WebApp".
+                </p>
+                <p>
+                    Como bien lo aclara el título, es un sistema de control y registro
+                    para aquellas personas con Diabetes.
+                    El Registro se realiza a través de un <a href='/formulario' target=_BLANK>formulario</a> 
+                    donde se le pedirá al usuario o paciente ingresar los siguientes datos: Nombre Completo, 
+                    Edad, DNI, Sexo Biológico y finalmente el Nivel de Azúcar en Sangre.
+                    Cabe aclarar que la medición del Nivel de Azúcar se debe realizar en <b>Ayunas</b> 
+                    mediante el "Glucómetro" o simplemente, Medidor de Glucosa.
+                </p>
+                <p>
+                    Al ser una WebApp, como tal, brinda información para desarrolladores, 
+                    convirtiendola, además, en una <a href='/niveles/api' target=_BLANK>API</a> 
+                    a la cual se le puede consumir y/o extraer información útil para quien la necesite.
+                </p>
+                <p>
+                    Para re-generar la Base de Datos deberá el cliente estar logueado como administrador,
+                    que deberá ingresar el nombre de usuario y su clave numérica. En este caso, y, por el
+                    momento sólo el administrador del servidor tiene acceso a dichos datos.
+                </p>
+                <p>
+                    También permite mostrar gráficos y tablas de la información y registro que va realizando
+                    cada paciente, permitiendo así un mayor control y visualización tanto para el mismo como
+                    para el médico y/o diabetólogo a cargo.
+                    Más abajo hay algunas secciones que permiten un mejor descripción de cada 
+                    parte del programa.
+                </p>
+            </div>
+            <div class="info-container__section">
+                <h2><i class="fas fa-exclamation-circle"></i><b> NOTA:</b></h2>
+                <p>
+                    Quiero aclarar en 1er lugar que dicha WebApp, en estos momentos,
+                    está diseñada con fines meramente académicos, lo que no quiere decir,
+                    que en un futuro y luego de seguir siendo desarrollada, pueda ser
+                    adaptada con otros fines. Debido a lo mencionado, y, por cuestiones de
+                    seguridad y para mantener a la persona en forma anónima el DNI no
+                    será mostrado ni en la API, ni en tablas y/o gráficos.
+                </p>
+                <p>
+                    Otro de los objetivos principales, y a futuro, es que pueda ser útil para
+                    llevar una mayor fluidez para los controles y comunicación entre
+                    pacientes y médicos sin siquiera tener un contacto físico.
+                </p>
+                <p>
+                    Por último aclarar que la página aún se encuentra en desarrollo.
+                    Ante cualquier consulta en el pie de la página se encuentra la 
+                    información para contactarme.
+                </p>
+            </div>
+            <div class="info-container__section">
+                <h2><i class="fas fa-code"></i><b> API PARA DESARROLLADORES:</b></h2>
+                <p>
+                    Esta sección es para aquellos desarrolladores/programadores que quieran realizar
+                    prácticas consumiendo la información que brinda esta WebApp para fines académicos.
+                </p>
+                <p>
+                    La información brindada está en formato <b>JSON</b> y cuenta con todos los registros
+                    realizados por cada paciente y/o cliente. Los campos que posee esta API son: 
+                    {id, age, datetime, value} siendo: el <b>id</b>: id del paciente, <b>age</b>: la edad, 
+                    <b>value</b>: el valor de azúcar en sangre y, <b>datetime</b>: la fecha y hora que 
+                    registró dicho valor.
+                </p>
+                <p>
+                    Para acceder al <b>dataset</b> puede ingresar en <a href='/niveles/api' target=_BLANK>API</a>
+                    sino, también copiando el siguiente endpoint: "<b>/niveles/api</b>"" y pegandolo a
+                    continuación de la página. Ej: http//...<b>/niveles/api</b>
+                </p>
+                <p>
+                    Dicho <b>endpoint</b> permite el ingreso opcional de una query string: '<b>?key=value</b>' 
+                    que se coloca seguido del endpoint: http//.../niveles/api<b>?key1=value1&key2=value2&key3=value3</b>.
+                    Ejemplo:
+                </p>
+                <p>
+                    <b>id</b>: http//.../niveles/api<b>?id=1</b> muestra los registros del paciente cuyo 
+                    id corresponda.
+                </p>
+                <p>
+                    <b>limit</b>: http//.../niveles/api<b>?id=1&limit=1</b> o 
+                    http//.../niveles/api<b>?limit=1</b> muestra la cantidad máxima de registros a mostrar.
+                </p>
+                <p>
+                    <b>offset</b>: http//.../niveles/api<b>?id=1&limit=1&offset=1</b> o 
+                    http//.../niveles/api<b>?limit=1&offset=1</b> o 
+                    http//.../niveles/api<b>?offset=1</b> muestra los registros pero ahora a partir del
+                    valor que tome el offset.
+                </p>
+            </div>
+            <div class="info-container__section">
+                <h2><i class="fas fa-chart-bar"></i><b> GRÁFICOS:</b></h2>
+                <p>
+                    La persona cuyo formulario haya completado y enviado a la Base de Datos
+                    tendrá la opción de ver un gráfico de línea de como estuvo variando su nivel de azúcar.
+                    Esto también es aplicable para el médico en cuestión ya que tiene información gráfica 
+                    del registro de sus pacientes.
+                </p>
+                <p>
+                    Para acceder al gráfico de los registros personales debe colocar el endpoint 
+                    '<b>/niveles/ingresar_dni_persona/grafico</b>' seguido del link de la página.
+                    Ejemplo: https://...<b>/niveles/33456789/grafico</b>
+                </p>
+                <p>
+                    Otro tipo de gráfico que presenta esta WebApp es el de barras, que realiza una
+                    comparativa de la cantidad de personas que han hecho un registro según grupo etario,
+                    y, según el sexo biológico de cada uno. Para acceder al gráfico comparativo usar el
+                    siguiente endpoint: '<b>/comparativa</b>'. Ejemplo: https://...<b>/comparativa</b>
+                </p>
+            </div>
+            <div class="info-container__section">
+                <h2><i class="fas fa-table"></i><b> TABLAS:</b></h2>
+                <p>
+                    La persona cuyo formulario haya completado y enviado a la Base de Datos
+                    tendrá la opción de ver una tabla de como estuvo variando su nivel de azúcar.
+                    Esto también es aplicable para el médico en cuestión ya que tiene información en  
+                    formato de tabla del registro de sus pacientes como así también el promedio y la
+                    cantidad de registros de mediciones realizadas.
+                </p>
+                <p>
+                    Para acceder a la tabla de los registros personales debe colocar el endpoint 
+                    '<b>/niveles/ingresar_dni_persona/tabla</b>' seguido del link de la página.
+                    Ejemplo: https://...<b>/niveles/33456789/tabla</b>
+                </p>
+                <p>
+                    Esta WebApp también posee una tabla con todos los registros realizados
+                    de todas las personas que hayan completado el formulario. Útil para tener
+                    otra forma de visualización de los mismos.
+                    Para acceder a la tabla usar el siguiente endpoint: 
+                    '<b>/niveles/tabla</b>'. Ejemplo: https://...<b>/niveles/tabla</b>                    
+                </p>
+                <p>
+                    Dicho <b>endpoint</b> permite el ingreso opcional de una query string: '<b>?key=value</b>' 
+                    que se coloca seguido del endpoint: http//.../niveles/tabla<b>?key1=value1&key2=value2&key3=value3</b>.
+                    Ejemplo:
+                </p>
+                <p>
+                    <b>id</b>: http//.../niveles/tabla<b>?id=1</b> muestra los registros del paciente cuyo 
+                    id corresponda.
+                </p>
+                <p>
+                    <b>limit</b>: http//.../niveles/tabla<b>?id=1&limit=1</b> o 
+                    http//.../niveles/tabla<b>?limit=1</b> muestra la cantidad máxima de registros a mostrar.
+                </p>
+                <p>
+                    <b>offset</b>: http//.../niveles/tabla<b>?id=1&limit=1&offset=1</b> o 
+                    http//.../niveles/tabla<b>?limit=1&offset=1</b> o 
+                    http//.../niveles/tabla<b>?offset=1</b> muestra los registros pero ahora a partir del
+                    valor que tome el offset.
+                </p>
+            </div>
+        </div>
+        <div class="container-footer">
             <footer>
                 <address>
                     <nav class="nav-bar">
                         <ul class="nav-bar__ul">
+                            <li class="nav-bar__li"><u><b>CONTACTO:</b></u></li>
                             <li class="nav-bar__li"><i class="fas fa-user-circle"></i><a href="">
                                 Torres Molina Emmanuel O.</a></li>
                             <li class="nav-bar__li"><i class="far fa-envelope"></i><a href="">

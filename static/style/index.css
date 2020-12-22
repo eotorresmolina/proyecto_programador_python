@@ -37,6 +37,18 @@
     text-shadow: 4px 4px 9px #fff, 4px 4px 9px #fff;
 }
 
+.div2-form__h2 {
+    color:rgba(178, 34, 34);
+    display: block;
+    box-sizing: border-box;
+    border: none;
+    font-size: 3em;
+    font-family: Arial;
+    text-align: center;
+    text-shadow: 4px 4px 9px #fff, 4px 4px 9px #fff;
+    padding-bottom: 20px;
+}
+
 .div3-form__h2 {
     color: rgba(178, 34, 34);
     display: block;
@@ -70,4 +82,19 @@
     box-sizing: border-box;
     text-align: right;
     margin-right: 4px;
+}
+
+
+.info-container {
+    padding-top: 23px;
+    font-family: initial;
+    font-size: 19px;
+}
+
+.info-container__section {
+    padding-bottom: 22px;
+}
+
+.container-footer {
+    padding-top: 44px;
 }

@@ -190,7 +190,8 @@ def registro():
 
             if (name is None or dni is None or dni.isdigit() is False
                 or age.isdigit() is False or gender is None or sugarlevel is None
-                or sugarlevel.isdigit() is False):
+                or sugarlevel.isdigit() is False or int(sugarlevel) <= 0 or 
+                int(sugarlevel) >= 999):
 
                 # Retorno un Código de Estado 400
                 return Response(status=400)
