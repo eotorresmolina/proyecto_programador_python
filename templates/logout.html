@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabla</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Torres Molina Emmanuel O.">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="stylesheet" href="../../static/style/normalize.css" type="text/css">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+        <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/form.css')}}">
+        <link rel="stylesheet" href="../../static/style/form.css" type="text/css">
+        <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <ul class="nav-bar__ul">
+                    <li class="nav-bar__li"><i class="fas fa-home"></i><a href="/">
+                        Página de Inicio</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-database"></i><a href="/reset">
+                        Crear y/o Regenerar DB</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-user-lock"></i><a href="/login">
+                        Loguearse como Administrador</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-info-circle"></i><a href="/info">
+                        Información y Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1 style="color:rgba(178, 34, 34)">
+            Bienvenido/a: Usted está Logueado como Administrador!
+        </h1>
+        <h2 style="color:rgba(178, 34, 34)">
+            <b>ATENCIÓN:</b> Base de Datos (DB) Borrada y/o Regenerada Correctamente.!
+        </h2>
+        <h2>
+            No se olvide de Desloguearse accediendo a: <a href="/logout"><b>Logout</b></a>
+        </h2>
+    </body>
+</html>

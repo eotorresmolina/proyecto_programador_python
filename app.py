@@ -65,13 +65,15 @@ def get_args():
     return nro_id, limit, offset
 
 
+# Creo un Archivo .log para guardar los errores que haya en el servidor.
+logging.basicConfig(filename='myapp.log', 
+                    format='%(asctime)s - %(levelname)s - %(message)s', 
+                    level=logging.INFO)
+
+logger = logging.getLogger('app')
+
+
 # Desarrollo de la API - WebApp:
-
-# logging.basicConfig(filename='myapp.log', 
-#                     format='%(asctime)s - %(levelname)s - %(message)s', 
-#                     level=logging.INFO)
-
-# logger = logging.getLogger('app')
 
 # Creo el Server:
 app = Flask(__name__)
@@ -87,7 +89,9 @@ def index():
         return render_template(templates['index'])
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/reset
@@ -104,36 +108,36 @@ def reset():
             
             # Borro y/o Re-genero la DB
             diabetes.create_schema()
-
-            url = url_for('logout')
             
-            result = '<h1> Bienvenido/a: Usted está Logueado como Administrador!</h1>'
-            result += '<h1><b>ATENCIÓN:</b> Base de Datos (DB) Borrada y/o Regenerada Correctamente.!</h1>'
-            result += '<h3>No se olvide de Desloguearse accediendo a: '
-            result += '<a href=' + str(url) + '>logout</a></h3>'
-            
-            return result
+            return render_template(templates['logout'])
 
         else:
             
             # Elimino la sesión ya que el usuario no es el administrador.
             session.clear()
 
-            return Response("<h1>Error al Intentar Loguearse</h1>", status=401, mimetype='text') 
+            return Response(status=401) 
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/login
 @app.route(endpoint['login'], methods=['GET', 'POST'])
 def login():
-    try:
-        # Entro, en este caso, cuando soy redirigido por '/reset'
-        if request.method == 'GET':
+        
+    # Entro, en este caso, cuando soy redirigido por '/reset'
+    if request.method == 'GET':
+        try:
             return render_template(templates['login'])
+            
+        except:
+            logger.error({'trace': traceback.format_exc()})
+            return Response(status=500)
 
-        elif request.method == 'POST':
+    elif request.method == 'POST':
+        try:
             username = str(request.form.get('username'))
             numerical_code = str(request.form.get('numerical_code'))
 
@@ -147,8 +151,9 @@ def login():
             # Redirecciono hacia el endpoint "reset"
             return redirect(url_for('reset'))
 
-    except:
-            return jsonify({'trace': traceback.format_exc()})
+        except:
+            logger.error({'trace': traceback.format_exc()})
+            return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/logout           
@@ -163,7 +168,8 @@ def logout():
         return redirect(url_for('.index'))
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/formulario
@@ -176,7 +182,8 @@ def registro():
             return render_template(templates['formulario'])
     
         except:
-            return jsonify({'trace': traceback.format_exc()})
+            logger.error({'trace': traceback.format_exc()})
+            return Response(status=500)
         
     # Entra cuando es Enviado el Formulario con los Datos.
     if request.method == 'POST':
@@ -189,7 +196,8 @@ def registro():
             sugarlevel = str(request.form.get('sugarlevel'))
 
             if (name is None or dni is None or dni.isdigit() is False
-                or age.isdigit() is False or gender is None or sugarlevel is None
+                or dni is None or age.isdigit() is False or int(age) <= 0 or 
+                int(age) >= 120  or gender is None or sugarlevel is None
                 or sugarlevel.isdigit() is False or int(sugarlevel) <= 0 or 
                 int(sugarlevel) >= 999):
 
@@ -210,7 +218,8 @@ def registro():
             return render_template(templates['registro'])
 
         except:
-            return jsonify({'trace': traceback.format_exc()})
+            logger.error({'trace': traceback.format_exc()})
+            return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/api
@@ -225,7 +234,8 @@ def niveles_api():
         return jsonify(data_json)
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/tabla
@@ -247,7 +257,8 @@ def niveles_tabla():
         return render_template(templates['tabla_niveles'], row=zip(c1, c2, c3, c4))
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/{dni}/grafico
@@ -276,7 +287,8 @@ def niveles_dni_chart(dni):
         return Response(output.getvalue(), mimetype='image/png')
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/niveles/{dni}/tabla
@@ -303,7 +315,8 @@ def niveles_dni_tabla(dni):
                                 row=zip(c1, c2), avg=avg, count=count)
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        return Response(status=500)
 
 
 # Ruta que se ingresa por la Siguiente ULR: 127.0.0.1:5000/comparativa
@@ -370,7 +383,9 @@ def comparativa():
         return Response(output.getvalue(), mimetype='image/png')
     
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        
+        return Response(status=500)
 
 
 @app.route(endpoint['info'])
@@ -379,7 +394,9 @@ def info():
         return render_template(templates['info'])
 
     except:
-        return jsonify({'trace': traceback.format_exc()})
+        logger.error({'trace': traceback.format_exc()})
+        
+        return Response(status=500)
 
 
 if __name__ == "__main__":
