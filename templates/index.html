@@ -9,16 +9,21 @@
         <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
         <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
         <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
     </head>
     <body class="body-form">
         <div>
             <header>
-                <nav>
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/reset">Crear y/o Regenerar DB</a></li>
-                        <li><a href="/login">Loguearse como Administrador</a></li>
-                        <li><a href="/info">Información y Contacto</a></li>
+                <nav class="nav-bar">
+                    <ul class="nav-bar__ul">
+                        <li class="nav-bar__li"><i class="fas fa-home"></i><a href="/">
+                            Página de Inicio</a></li>
+                        <li class="nav-bar__li"><i class="fas fa-database"></i><a href="/reset">
+                            Crear y/o Regenerar DB</a></li>
+                        <li class="nav-bar__li"><i class="fas fa-user-lock"></i><a href="/login">
+                            Loguearse como Administrador</a></li>
+                        <li class="nav-bar__li"><i class="fas fa-info-circle"></i><a href="/info">
+                            Información y Contacto</a></li>
                     </ul>
                 </nav>
             </header>
@@ -30,28 +35,25 @@
             <h2 class="div3-form__h2">Sistema de Registro 
                 y Control para Personas con Diabetes</h2>
         </div>
-        <div>
-            <section>
-                <article>
-                    <u><i><h2>Endpoints Disponibles:</h2></i></u>
-                    <ul>
-                        <li><h3><b>[GET]</b> /formulario --> Completar el Registro de la Persona
-                        a través de un formulario HTML.</h3></li>
-                        <li><h3><b>[POST]</b> /formulario --> Enviar los Datos del formulario al Servidor.</h3></li>
-                        <li><h3><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
-                        Útil para Desarrolladores.</h3></li>
-                        <li><h3><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
-                        en formato Tabla HTML.</h3></li>
-                        <li><h3><b>[GET]</b> /niveles/{dni}/grafico --> Muestra un gráfico del Histórico de
-                        los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
-                        <li><h3><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
-                        Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</h3></li>
-                        <li><h3><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
-                        la cantidad de personas con Diabetes según el grupo etario y según el
-                        sexo biológico.</h3></li>
-                    </ul>
-                </article>
-            </section>
+        <div class="section">
+            <u><h3>Endpoints Disponibles:</h3></u>
+        </div>
+        <div class=container-endpoint>
+            <ul>
+                <li><b>[GET]</b> /formulario --> Completar el Registro de la Persona
+                a través de un formulario HTML.</li>
+                <li><b>[GET]</b> /niveles/api --> Muestra todos los registros ingresados en formato JSON -->
+                Útil para Desarrolladores.</li>
+                <li><b>[GET]</b> /niveles/tabla --> Muestra todos los registros ingresados 
+                en formato Tabla HTML.</li>
+                <li><b>[GET]</b> /niveles/{dni}/grafico --> Muestra un gráfico del Histórico de
+                los Valores de Azúcar en Sangre medidos en Ayuna de la persona cuyo DNI sea Ingresado.</li>
+                <li><b>[GET]</b> /niveles/{dni}/tabla --> Muestra una tabla con todos los Valores de 
+                Glucosa medidos en Ayuna de la persona cuyo DNI sea Ingresado.</li>
+                <li><b>[GET]</b> /comparativa --> Muestra un gráfico comparativo de
+                la cantidad de personas con Diabetes según el grupo etario y según el
+                sexo biológico.</li>
+            </ul>
         </div>
     </body>
 </html>

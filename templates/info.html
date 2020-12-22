@@ -4,18 +4,25 @@
         <title>Info</title>
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
-        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="stylesheet" href="../../static/style/normalize.css" type="text/css">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+        <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
         <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
-        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/index.css')}}">
+        <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/reset">Crear y/o Regenerar DB</a></li>
-                    <li><a href="/login">Loguearse como Administrador</a></li>
-                    <li><a href="/info">Información y Contacto</a></li>
+            <nav class="nav-bar">
+                <ul class="nav-bar__ul">
+                    <li class="nav-bar__li"><i class="fas fa-home"></i><a href="/">
+                        Página de Inicio</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-database"></i><a href="/reset">
+                        Crear y/o Regenerar DB</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-user-lock"></i><a href="/login">
+                        Loguearse como Administrador</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-info-circle"></i><a href="/info">
+                        Información y Contacto</a></li>
                 </ul>
             </nav>
             <img src="{{url_for('static', filename='media/info.png')}}">
@@ -41,15 +48,17 @@
                 
             </section>
         </article>
-        <footer>
-            <address>
-                <b>Autor:</b> Torres Molina Emmanuel O.
-                <b>Contacto:</b> emmaotm@gmail.com
-                <a href="https://github.com/eotorresmolina" target=_BLANK>
-                    <b>GitHub</b></a>
-                <a href="https://github.com/eotorresmolina/proyecto_programador_python" target=_BLANK>
-                    <b>Repositorio</b></a>
-            </address>
-        </footer>
+        <div class="content-footer">
+            <footer>
+                <address>
+                    <b>Autor:</b> Torres Molina Emmanuel O.
+                    <b>Contacto:</b> emmaotm@gmail.com
+                    <a href="https://github.com/eotorresmolina" target=_BLANK>
+                        <b>GitHub</b></a>
+                    <a href="https://github.com/eotorresmolina/proyecto_programador_python" target=_BLANK>
+                        <b>Repositorio</b></a>
+                </address>
+            </footer>
+        </div>
     </body>
 </html>

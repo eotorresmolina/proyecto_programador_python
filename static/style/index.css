@@ -7,6 +7,17 @@
     background-attachment: fixed;
 }
 
+.section {
+    font-size: 21px;
+    font-family: sans-serif;
+    color: #000;
+}
+
+.container-endpoint {
+    font-size: 24px;
+    font-family: Calibri;
+    color: #000;
+}
 
 .div2-form {
     font-size: 13px;
@@ -23,7 +34,7 @@
     border-radius: 13px;
     border: 1px solid blue;
     box-shadow: 2px 4px 10px 0 #000;
-    text-shadow: 4px 4px 9px #fff, 4px 4px 9px #fff
+    text-shadow: 4px 4px 9px #fff, 4px 4px 9px #fff;
 }
 
 .div3-form__h2 {
@@ -34,5 +45,29 @@
     font-family: sans-serif;
     text-align: center;
     font-weight: 100;
-    text-shadow: 3px 3px 8px #fff, 2px 2px 7px #fff
+    text-shadow: 3px 3px 8px #fff, 2px 2px 7px #fff;
+    padding-bottom: 20px;
+}
+
+
+.nav-bar__li {
+    display: inline-block;
+    padding: 12px;
+}
+
+.nav-bar__li:hover > a {
+    color: blue;
+}
+
+.nav-bar__li a {
+    color: #000;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.nav-bar__li i {
+    width: 20px;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 4px;
 }

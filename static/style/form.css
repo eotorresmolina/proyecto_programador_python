@@ -6,3 +6,76 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+
+.container {
+    color: #000;
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container__h1 {
+    font-size: 3em;
+    color: #000;
+}
+
+.container__h3 {
+    font-size: 2em;
+    font-family: cursive;
+    padding: 12px;
+    padding-bottom: 0;
+}
+
+.flex-container-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 50px;
+}
+
+.form {
+    min-width: 400px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+}
+
+.form__section {
+    font-size: 17px;
+    font-family: Arial;
+}
+
+.form__input {
+    font-family: cursive;
+    width: 100%;
+    padding: 6px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 3px solid rgb(3, 114, 240);
+    background: transparent;
+}
+
+.form__input:focus {
+    background: #ddd;
+    outline: none;
+}
+
+.form-img {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+}
+
+.form-img img {
+    width: 100%;
+    margin: auto;
+    border-radius: 50px;
+}
+
+.form input[type="submit"] {
+    background-color: rgb(3, 114, 240);
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: none;
+    padding: 12px;
+}

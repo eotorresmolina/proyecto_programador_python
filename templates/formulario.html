@@ -4,40 +4,61 @@
         <title>Formulario de Registro</title>
         <meta charset="utf-8">
         <meta name="author" content="Torres Molina Emmanuel O.">
-        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/normalize.css')}}">
+        <link rel="stylesheet" href="../../static/style/normalize.css" type="text/css">
+        <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+        <link rel="stylesheet" href="../../static/style/index.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/form.css')}}">
         <link rel="stylesheet" href="../../static/style/form.css" type="text/css">
+        <link rel="icon" href="{{url_for('static', filename='media/diabetes_icono.ico')}}">
+        <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/reset">Crear y/o Regenerar DB</a></li>
-                    <li><a href="/login">Loguearse como Administrador</a></li>
-                    <li><a href="/info">Información y Contacto</a></li>
+            <nav class="nav-bar">
+                <ul class="nav-bar__ul">
+                    <li class="nav-bar__li"><i class="fas fa-home"></i><a href="/">
+                        Página de Inicio</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-database"></i><a href="/reset">
+                        Crear y/o Regenerar DB</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-user-lock"></i><a href="/login">
+                        Loguearse como Administrador</a></li>
+                    <li class="nav-bar__li"><i class="fas fa-info-circle"></i><a href="/info">
+                        Información y Contacto</a></li>
                 </ul>
             </nav>
         </header>
-        <article>
-            <section>
-                <h1 style="color:rgba(178, 34, 34)">Registro de Datos:</h1>
-                <h2 style="color:rgba(178, 34, 34)">Por favor Complete los Datos del registro 
-                    y luego Haga Click en "Enviar Datos".
-                </h2>
-                <p>
-                    <form action="/formulario" method="post" target="_self">
-                        <p><b>Nombre Completo:</b> <input type="text" name="name" 
-                            placeholder="Nombre y Apellido" required></p>
-                        <p><b>DNI:</b> <input type="text" name="dni" required></p>
-                        <p><b>Edad:</b> <input type="number" name="age"></p>
-                        <p><b>Sexo:</b> <input type="text" name="gender"
-                            placeholder="Completar con: 'm' o 'f'"></p>
-                        <p><b>Nivel de Azúcar en Ayuna:</b> <input type="number" name="sugarlevel" required></p>
-                        <input type="submit" value="Enviar Datos">
-                    </form>
-                </p>
-            </section>
-        </article>
+        <div class="container">
+            <h1 class="container__h1">Registro de Datos:</h1>
+            <h3 class="container__h3">Por favor Complete los Datos del registro 
+                y luego Haga Click en "Enviar Datos".
+            </h3>
+        </div>
+        <div class="flex-container-form">
+            <form class=form action="/formulario" method="post" target="_self">
+                <div class="form__section"><b>Nombre Completo:</b> 
+                    <input class="form__input" type="text" name="name" placeholder="Nombre y Apellido" required>
+                </div>
+                <div class="form__section"><b>DNI:</b> 
+                    <input class="form__input" type="text" name="dni" required>
+                </div>
+                <div class="form__section"><b>Edad:</b> 
+                    <input class="form__input" type="number" name="age">
+                </div>
+                <div class="form__section"><b>Sexo:</b> 
+                    <input class="form__input" type="text" name="gender"
+                    placeholder="Completar con la letra: 'm' o 'f'">
+                </div>
+                <div class="form__section"><b>Nivel de Azúcar en Ayuna:</b> 
+                    <input class="form__input" type="number" name="sugarlevel" required>
+                </div>
+                <div class="form__section">
+                    <input class="form__input" type="submit" value="Enviar Datos">
+                </div>
+            </form>
+            <div class="form-img">
+                <img src="../../static/media/formulario.png">
+            </div>
+        </div>
     </body>
 </html>
