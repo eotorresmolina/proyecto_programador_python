@@ -405,6 +405,9 @@ if __name__ == "__main__":
 
     print('Para Acceder a la WebApp Ingresar al Siguiente Enlace: http://{}:{}/\n'
             .format(server['host'], server['port']))
+
+    print('Si es la 1ra Vez que Corre el Programa Ingrese a: http://127.0.0.1:5000/reset')
+    print('Introduzca--> Nombre de Usuario: "todopython"  |||  Código Numérico: "280930061993"\n\n')
     
     # Lanzo el Server:
     app.run(
