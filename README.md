@@ -13,7 +13,7 @@
  - **Institución Educativa** --> Inove Coding School
  
  
- # **Librería y Módulos Utilizados** :books: :point_down:
+ # **Librería y Módulos Utilizados** :books: :point_right:
  - **Flask** ---> microframework
  - **sqlite3** ---> DB - Data Base
  - **matplotlib**
@@ -39,6 +39,28 @@ pip3 install -U seaborn
 pip3 install -U Flask
 ```
  
+ 
+ # **Para que el programa funcione correctamente:** :point_right:
+ #### *Se debe Bajar los siguientes módulos del repositorio:*
+ 1. ```app.py``` (Programa Principal)
+ 2. ```diabetes.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el manejo de la DB)
+ 3. ```analitycs.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el filtrado y ploteado de la información)
+ 4. ```config.py``` (Módulo/Librería que Contiene la función para la manipulación del archivo config.ini)
+ 5. ```config.ini``` (Archivo de Configuración imprescindible para que funcione el programa.)
+ 6. ```schema.sql``` (Archivo que permite crear las tablas de la DB)
+ 7. Carpeta ```templates``` (Contiene todos los archivos .html)
+ 8. Carpeta ```static``` (Contiene las carpetas: ```media``` donde están alojadas las imágenes ```style``` donde están alojados los archivos .css
+ 
+ 
+ # **Descripción** :page_facing_up:
+ Como bien lo aclara el título principal, es un sistema registro y control para aquellas personas con Diabetes.
+ El Registro se realiza a través de un formulario donde se le pedirá al usuario/paciente ingresar los siguientes datos: Nombre Completo, 
+ Edad, DNI, Sexo Biológico y finalmente el Nivel de Azúcar en Sangre estando en Ayuna.
+ Una vez realizado esto y enviado la información, el paciente y/o el médico en cuestión, podrían realizar un monitoreo de los registros mediante
+ gráficos y tablas.
+ Además permite mostrar un gráfico comparativo de las personas registradas según grupo etario y sexo biológico.
+ 
+ 
  # **Modos de Uso** 🔧⚙️
 Descargue el repositorio en su pc y abra el proyecto en su editor de código, luego ejecute el archivo ```app.py```. La aplicación crea un servidor local en la dirección http://127.0.0.1:5000/ en donde tendremos alojado el frontend de nuestra aplicación. Las direcciones para acceder a las páginas de la aplicación son:
 
@@ -54,27 +76,6 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
  - ***Autor:*** Torres Molina, Emmanuel Oscar.
  - ***email:*** emmaotm@gmail.com
  - ***Mis Otros Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
-
-
-# **Módulos/Archivos para que el Programa Funcione Correctamente:** :point_right:
- #### *Se debe Bajar los siguientes módulos del repositorio:*
- 1. ```app.py``` (Programa Principal)
- 2. ```diabetes.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el manejo de la DB)
- 3. ```analitycs.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el filtrado y ploteado de la información)
- 4. ```config.py``` (Módulo/Librería que Contiene la función para la manipulación del archivo config.ini)
- 5. ```config.ini``` (Archivo de Configuración imprescindible para que funcione el programa.)
- 6. ```schema.sql``` (Archivo que permite crear las tablas de la DB)
- 7. Carpeta ```templates``` (Contiene todos los archivos .html)
- 8. Carpeta ```static``` (Contiene las carpetas: ```media``` donde están alojadas las imágenes ```style``` donde están alojados los archivos .css
-
-
-# **Descripción** :page_facing_up:
- Como bien lo aclara el título principal, es un sistema registro y control para aquellas personas con Diabetes.
- El Registro se realiza a través de un formulario donde se le pedirá al usuario/paciente ingresar los siguientes datos: Nombre Completo, 
- Edad, DNI, Sexo Biológico y finalmente el Nivel de Azúcar en Sangre estando en Ayuna.
- Una vez realizado esto y enviado la información, el paciente y/o el médico en cuestión, podrían realizar un monitoreo de los registros mediante
- gráficos y tablas.
- Además permite mostrar un gráfico comparativo de las personas registradas según grupo etario y sexo biológico.
  
 
 # **Versión y Última Actualización** :heavy_check_mark:
@@ -89,6 +90,6 @@ Este proyecto tiene un propósito meramente académico y con fines de práctica.
 # **Consulta y/o Problemas** :question:
   Ante Cualquier mal funcionamiento del Programa y/o consultas acerca del uso del mismo pueden mandarme un mensaje al mail que más arriba se detalla.
   
-  Muchas Gracias por tomarte el tiempo de ver el repositorio y haber llegado hasta acá.*
+  Muchas Gracias por tomarte el tiempo de ver el repositorio y haber llegado hasta acá.
   
   Emmanuel.
