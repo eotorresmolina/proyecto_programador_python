@@ -72,8 +72,11 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
 - http://127.0.0.1:5000/info   # Página que muestra información y descripción del funcionamiento de la página.
  
  
+# **Autor** ✒️
+:octocat: Torres Molina, Emmanuel Oscar 
+ 
+ 
 # **Contacto** :e-mail: :point_down:
- - ***Autor:*** Torres Molina, Emmanuel Oscar.
  - ***email:*** emmaotm@gmail.com
  - ***Mis Otros Repositorios*** --> [Click](https://github.com/eotorresmolina?tab=repositories)
  
@@ -83,7 +86,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
  - **Última Actualización:** 23-12-2020
 
 
-# Licencia 📄 :balance_scale:
+# **Licencia** 📄 :balance_scale:
 Este proyecto tiene un propósito meramente académico y con fines de práctica. Es por ello que no existe garantía en su implementación debido a que se trata de una demostración de uso gratuito que aún está en desarrollo. 
 
 
