@@ -73,7 +73,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
  
  
 # **Autor** ✒️
-:octocat: Torres Molina, Emmanuel Oscar 
+:octocat: **Torres Molina, Emmanuel Oscar** 
  
  
 # **Contacto** :e-mail: :point_down:
