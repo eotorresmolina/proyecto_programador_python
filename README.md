@@ -2,7 +2,7 @@
 # **SIRCODI:** :drop_of_blood: :argentina:
  ## *Sistema de Registro y Control para Personas con Diabetes.* 
  
- Este es un Proyecto Realizado para el Curso de "Programador Python".
+ Este es un Proyecto del tipo Web-App o API Realizado para el Curso de "Programador Python".
  
  
 # **Tipo y Número de Proyecto:** 
@@ -17,25 +17,60 @@
  
  **Institución:** *Inove Coding School*
  
- # **Librería y Módulos Utilizados:**
- -**Flask** ---> microframework
- -**sqlite3** ---> DB - Data Base
- -**Matplotlib**
- -**Seaborn**
- -**Numpy**
- -**traceback**
- -**io**
- -**logging**
- -**os**
- -**datetime**
- -**configparser**
  
+ # **Librería y Módulos Utilizados:**
+ - **Flask** ---> microframework
+ 
+ - **sqlite3** ---> DB - Data Base
+ 
+ - **matplotlib**
+ 
+ - **seaborn**
+ 
+ - **numpy**
+ 
+ - **traceback**
+ 
+ - **io**
+ 
+ - **logging**
+ 
+ - **os**
+ 
+ - **datetime**
+ 
+ - **configparser**
+ 
+ 
+ # Pre-requisitos 📋
+Para poder ejecutar esta aplicación, será necesario tener instalada la versión 3.6 de Python o superior. También es necesario incluir varios módulos.
+Recomendamos antes de descargar el repositorio, realizar los siguientes pasos:
+
+```
+pip3 install pip -U --upgrade
+pip3 install numpy
+pip3  install matplotlib
+pip3 install -U seaborn
+pip3 install -U Flask
+```
+ 
+ # Instalación y pruebas 🔧⚙️
+Descargue el repositorio en su pc y abra el proyecto en su editor de código, luego ejecute el archivo ```app.py```. La aplicación crea un servidor local en la dirección http://127.0.0.1:5000/ en donde tendremos alojado el frontend de nuestra aplicación. Las direcciones para acceder a las páginas de la aplicación son:
+
+- http://127.0.0.1:5000/          # Página principal que lo guiará para el uso de la WebApp.
+- http://127.0.0.1:5000/formulario # Página en donde podremos ingresar los datos para ser enviados y luego cargados en la DB.
+- http://127.0.0.1:5000/niveles/tabla   # Página que muestra todos los registros realizados en formato tabla HTML.
+- http://127.0.0.1:5000/niveles/api   # Página que muestra el dataset en formato JSON de los registros realizados --> Útil para Desarrolladores
+- http://127.0.0.1:5000/comparativa   # Página que muestra los gráficos de comparaciones de la cantidad de personas según grupo etario y sexo biológico.
+- http://127.0.0.1:5000/info   # Página que muestra información y descripción del funcionamiento de la página.
  
  
 # **Contacto**
- ### ***Autor:*** Torres Molina, Emmanuel Oscar.
- ### ***email:*** emmaotm@gmail.com
- ### ***Para Ver mis Otros Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
+ - ***Autor:*** Torres Molina, Emmanuel Oscar.
+ 
+ - ***email:*** emmaotm@gmail.com
+ 
+ - ***Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
 
 
 # **Descripción:**
