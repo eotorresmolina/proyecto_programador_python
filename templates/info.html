@@ -51,7 +51,7 @@
                 </p>
                 <p>
                     Al ser una WebApp, como tal, brinda información para desarrolladores, 
-                    convirtiendola, además, en una <a href='/niveles/api' target=_BLANK>REST API</a> 
+                    convirtiéndola, además, en una <a href='/niveles/api' target=_BLANK>REST API</a> 
                     a la cual se le puede consumir y/o extraer información útil para quien la necesite.
                 </p>
                 <p>
@@ -60,11 +60,10 @@
                     momento sólo el administrador del servidor tiene acceso a dichos datos.
                 </p>
                 <p>
-                    También permite mostrar gráficos y tablas de la información y registro que va realizando
-                    cada paciente, permitiendo así un mayor control y visualización tanto para el mismo como
+                    También permite mostrar gráficos/tablas de la información y registro que va realizando
+                    cada paciente, permitiendo así un mayor control y visualización tanto para él como
                     para el médico y/o diabetólogo a cargo.
-                    Más abajo hay algunas secciones que permiten un mejor descripción de cada 
-                    parte del programa.
+                    A continuación se describirán las secciones de cada parte del programa.
                 </p>
             </div>
             <div class="info-container__section">
@@ -72,20 +71,19 @@
                 <p>
                     Quiero aclarar en 1er lugar que dicha WebApp, en estos momentos,
                     está diseñada con fines meramente académicos, lo que no quiere decir,
-                    que en un futuro y luego de seguir siendo desarrollada, pueda ser
+                    que en un futuro y luego de seguir siendo desarrollada, podrá ser
                     adaptada con otros fines. Debido a lo mencionado, y, por cuestiones de
-                    seguridad y para mantener a la persona en forma anónima el DNI no
+                    seguridad, para mantener a la persona en forma anónima el DNI no
                     será mostrado ni en la API, ni en tablas y/o gráficos.
                 </p>
                 <p>
-                    Otro de los objetivos principales, y a futuro, es que pueda ser útil para
-                    llevar una mayor fluidez para los controles y comunicación entre
-                    pacientes y médicos sin siquiera tener un contacto físico.
+                    Otro de los objetivos principales a futuro, es que pueda ser útil para
+                    llevar una mayor fluidez en los controles y en la comunicación entre
+                    pacientes-médicos sin requerir de una consulta presencial.
                 </p>
                 <p>
-                    Por último aclarar que la página aún se encuentra en desarrollo.
                     Ante cualquier consulta en el pie de la página se encuentra la 
-                    información para contactarme.
+                    información de contacto.
                 </p>
             </div>
             <div class="info-container__section">
@@ -96,7 +94,7 @@
                 </p>
                 <p>
                     La información brindada está en formato <b>JSON</b> y cuenta con todos los registros
-                    realizados por cada paciente y/o cliente. Los campos que posee esta API son: 
+                    realizados por cada persona/paciente. Los campos que posee esta API son: 
                     {id, age, datetime, value} siendo: el <b>id</b>: id del paciente, <b>age</b>: la edad, 
                     <b>value</b>: el valor de azúcar en sangre y, <b>datetime</b>: la fecha y hora que 
                     registró dicho valor.
@@ -129,8 +127,8 @@
             <div class="info-container__section">
                 <h2><i class="fas fa-chart-bar"></i><b> GRÁFICOS:</b></h2>
                 <p>
-                    La persona cuyo formulario haya completado y enviado a la Base de Datos
-                    tendrá la opción de ver un gráfico de línea de como estuvo variando su nivel de azúcar.
+                    La persona cuyo formulario haya completado tendrá la opción de ver uno monitoreo gráfico 
+                    de como estuvo variando su nivel de azúcar.
                     Esto también es aplicable para el médico en cuestión ya que tiene información gráfica 
                     del registro de sus pacientes.
                 </p>
@@ -140,19 +138,20 @@
                     Ejemplo: https://...<b>/niveles/33456789/grafico</b>
                 </p>
                 <p>
-                    Otro tipo de gráfico que presenta esta WebApp es el de barras, que realiza una
-                    comparativa de la cantidad de personas que han hecho un registro según grupo etario,
-                    y, según el sexo biológico de cada uno. Para acceder al gráfico comparativo usar el
-                    siguiente endpoint: '<b>/comparativa</b>'. Ejemplo: https://...<b>/comparativa</b>
+                    Otro tipo de gráfico que presenta esta WebApp es el de barras, que a partir
+                    de la cantidad de personas que han hecho un registro, realiza una comparativa 
+                    según grupo etario, y, según el sexo biológico de cada uno. Para acceder al gráfico 
+                    comparativo usar el siguiente endpoint: 
+                    '<b>/comparativa</b>'. Ejemplo: https://...<b>/comparativa</b>
                 </p>
             </div>
             <div class="info-container__section">
                 <h2><i class="fas fa-table"></i><b> TABLAS:</b></h2>
                 <p>
-                    La persona cuyo formulario haya completado y enviado a la Base de Datos
-                    tendrá la opción de ver una tabla de como estuvo variando su nivel de azúcar.
-                    Esto también es aplicable para el médico en cuestión ya que tiene información en  
-                    formato de tabla del registro de sus pacientes como así también el promedio y la
+                    La persona cuyo formulario haya completado tendrá la opción de ver uno monitoreo 
+                    de como estuvo variando su nivel de azúcar. 
+                    Esto también es aplicable para el médico en cuestión ya que tiene información en 
+                    formato de tabla del registro de sus pacientes como así también el promedio y la 
                     cantidad de registros de mediciones realizadas.
                 </p>
                 <p>
