@@ -4,7 +4,7 @@
  Este es un Proyecto del tipo Web-App o API Realizado para el Curso de "Programador Python".
  
  
-# **Proyecto** :computer: :technologist:
+# **Proyecto** :technologist:
  - **Número** --> 2do Proyecto
  - **Tipo** --> Aplicación Web - WebApp - REST API
  - **Lenguaje Backend Utilizado** --> Python
@@ -50,13 +50,13 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
 - http://127.0.0.1:5000/info   # Página que muestra información y descripción del funcionamiento de la página.
  
  
-# **Contacto** :e-mail:
+# **Contacto** :e-mail: :point_down:
  - ***Autor:*** Torres Molina, Emmanuel Oscar.
  - ***email:*** emmaotm@gmail.com
  - ***Mis Otros Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
 
 
-# **Módulo y/o Archivos para que el Programa Funcione Correctamente:** :point_right:
+# **Módulos/Archivos para que el Programa Funcione Correctamente:** :point_right:
  #### *Se debe Bajar los siguientes módulos del repositorio:*
  1. ```app.py``` (Programa Principal)
  2. ```diabetes.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el manejo de la DB)
@@ -68,7 +68,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
  8. Carpeta ```static``` (Contiene las carpetas: ```media``` donde están alojadas las imágenes ```style``` donde están alojados los archivos .css
 
 
-# **Descripción**
+# **Descripción** :page_facing_up:
  Como bien lo aclara el título principal, es un sistema registro y control para aquellas personas con Diabetes.
  El Registro se realiza a través de un formulario donde se le pedirá al usuario/paciente ingresar los siguientes datos: Nombre Completo, 
  Edad, DNI, Sexo Biológico y finalmente el Nivel de Azúcar en Sangre estando en Ayuna.
@@ -77,7 +77,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
  Además permite mostrar un gráfico comparativo de las personas registradas según grupo etario y sexo biológico.
  
 
-# **Versión y Última Actualización**
+# **Versión y Última Actualización** :heavy_check_mark:
  - **Versión:** 1.1
  - **Última Actualización:** 23-12-2020
 
@@ -87,6 +87,8 @@ Este proyecto tiene un propósito meramente académico y con fines de práctica.
 
 
 # **Consulta y/o Problemas** :question:
-  *Ante Cualquier mal funcionamiento del Programa y/o consultas acerca del uso del mismo pueden mandarme un mensaje al mail que más arriba se detalla.*
-  *Muchas Gracias por tomarte el tiempo de ver el repositorio y haber llegado hasta acá.*
-  *Emmanuel.*
+  Ante Cualquier mal funcionamiento del Programa y/o consultas acerca del uso del mismo pueden mandarme un mensaje al mail que más arriba se detalla.
+  
+  Muchas Gracias por tomarte el tiempo de ver el repositorio y haber llegado hasta acá.*
+  
+  Emmanuel.
