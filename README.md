@@ -1,8 +1,11 @@
-# **Título del Proyecto:** 
- ### *Sistema de Registro de Casos del Covid-19 para la República Argentina.* :mask: :argentina:
+![logotipo](static/media/diabetes.jpg)
+# **SIRCODI:** :drop_of_blood: :argentina:
+ ### *Sistema de Registro y Control para Personas con Diabetes.* 
+ 
+ Este es un Proyecto Realizado para el Curso de "Programador Python".
  
  
-# **Tipo y Número de Proyecto:**
+# **Tipo y Número de Proyecto:** 
  ### **2do Proyecto de la Carrera.**
  ### **Lenguaje Backend Utilizado:** *Python*
  ### **Curso:** *Programador Python* 
