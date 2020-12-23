@@ -75,7 +75,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
 # **Contacto** :e-mail: :point_down:
  - ***Autor:*** Torres Molina, Emmanuel Oscar.
  - ***email:*** emmaotm@gmail.com
- - ***Mis Otros Repositorios*** ==> [Click](https://github.com/eotorresmolina?tab=repositories)
+ - ***Mis Otros Repositorios*** --> [Click](https://github.com/eotorresmolina?tab=repositories)
  
 
 # **Versión y Última Actualización** :heavy_check_mark:
