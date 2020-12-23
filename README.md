@@ -1,16 +1,16 @@
 ![logotipo](static/media/diabetes.jpg)
 # **SIRCODI:** :drop_of_blood: :argentina:
- ### *Sistema de Registro y Control para Personas con Diabetes.* 
+ ## *Sistema de Registro y Control para Personas con Diabetes.* 
  
  Este es un Proyecto Realizado para el Curso de "Programador Python".
  
  
 # **Tipo y Número de Proyecto:** 
- ### **2do Proyecto de la Carrera.**
- ### **Lenguaje Backend Utilizado:** *Python*
- ### **Curso:** *Programador Python* 
- ### **Carrera:** *Desarrollador Python*
- ### **Institución:** *Inove Coding School*
+ **2do Proyecto de la Carrera.**
+ **Lenguaje Backend Utilizado:** *Python*
+ **Curso:** *Programador Python* 
+ **Carrera:** *Desarrollador Python*
+ **Institución:** *Inove Coding School*
  
  # **Librería y Módulos Utilizados:**
  ### **Flask** ---> microframework
