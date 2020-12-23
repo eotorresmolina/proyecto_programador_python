@@ -6,24 +6,29 @@
  
  
 # **Tipo y Número de Proyecto:** 
+
  **2do Proyecto de la Carrera.**
+ 
  **Lenguaje Backend Utilizado:** *Python*
+ 
  **Curso:** *Programador Python* 
+ 
  **Carrera:** *Desarrollador Python*
+ 
  **Institución:** *Inove Coding School*
  
  # **Librería y Módulos Utilizados:**
- ### **Flask** ---> microframework
- ### **sqlite3** ---> DB - Data Base
- ### **Matplotlib**
- ### **Seaborn**
- ### **Numpy**
- ### **traceback**
- ### **io**
- ### **logging**
- ### **os**
- ### **datetime**
- ### **configparser**
+ -**Flask** ---> microframework
+ -**sqlite3** ---> DB - Data Base
+ -**Matplotlib**
+ -**Seaborn**
+ -**Numpy**
+ -**traceback**
+ -**io**
+ -**logging**
+ -**os**
+ -**datetime**
+ -**configparser**
  
  
  
